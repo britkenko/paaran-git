@@ -1,0 +1,20 @@
+/* Canvas */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Text */
+#paaran-art {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 10px #000000;
+}
