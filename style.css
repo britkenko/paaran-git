@@ -17,18 +17,24 @@ body {
 }
 
 .canvas-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; /* Add this line */
 }
 
+
 canvas {
-    position: absolute;
-    display: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Change this line */
+  height: 100%; /* Change this line */
 }
+
 
 #paaran-art {
   cursor: pointer;

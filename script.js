@@ -1,8 +1,10 @@
+
 const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+
+const ctx = canvas.getContext('2d');
 const paaranArt = document.getElementById('paaran-art');
 const paaranArtWidth = paaranArt.clientWidth;
 const paaranArtHeight = paaranArt.clientHeight;
@@ -34,7 +36,7 @@ function drawLines() {
     bottom: paaranArtY + paaranArtHeight + 20,
   };
 
-  function drawSingleLine() {
+  function drawSingleLine(intervalId) {
     if (currentStep >= totalSteps) {
       clearInterval(intervalId);
       return;
@@ -76,7 +78,7 @@ function drawLines() {
     currentStep++;
   }
 
-  const intervalId = setInterval(drawSingleLine, interval);
+  const intervalId = setInterval(() => drawSingleLine(intervalId), interval);
 }
 
 function animate() {
@@ -95,13 +97,18 @@ function animate() {
     return;
   }
 
-  const newHeight = currentHeight - incrementHeight;
-  const newWidth = currentWidth - incrementWidth;
+const newHeight = currentHeight - incrementHeight;
+const newWidth = currentWidth - incrementWidth;
 
-  canvas.height = newHeight;
-  canvas.width = newWidth;
+canvas.height = newHeight;
+canvas.width = newWidth;
 
-  drawLines(); // Redraw the lines after resizing the canvas
+drawLines(); // Redraw the lines after resizing the canvas
 
-  const rect = paaranArt.getBoundingClientRect();
-animate();
+const rect = paaranArt.getBoundingClientRect();
+setTimeout(() => {
+animate(); // Call the animate function recursively after a delay
+}, 10); // Set a small delay of 10 milliseconds before calling the function again
+}
+
+animate(); // Start the animation when the page is loaded.
