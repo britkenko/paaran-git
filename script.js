@@ -41,20 +41,6 @@ function drawLines() {
       yPos += lineWidth + lineSpacing;
     }
 
-    let xPos = 0;
-    while (xPos < canvas.width) {
-      ctx.beginPath();
-      if (xPos % (lineWidth * 4) === 0) {
-        ctx.moveTo(xPos, progress);
-        ctx.lineTo(xPos, 0);
-      } else {
-        ctx.moveTo(xPos, canvas.height - progress);
-        ctx.lineTo(xPos, canvas.height);
-      }
-      ctx.stroke();
-      xPos += lineWidth + lineSpacing;
-    }
-
     currentStep++;
   }
 

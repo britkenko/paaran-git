@@ -5,13 +5,13 @@
 
   // Define the initial and final heights for the transition
   const initialHeight = canvas.height;
-  const finalHeight = Math.floor(canvas.height * 0.8);
+  const finalHeight = Math.floor(canvas.height * 0.1);
 
   // Define the duration of the transition in milliseconds
   const duration = 1400;
 
   // Define the final width of the canvas
-  const finalWidth = Math.floor(canvas.width * 0.6);
+  const finalWidth = Math.floor(canvas.width * 0.24);
 
   // Define the time interval between each frame of the animation in milliseconds
   const interval = 10;
